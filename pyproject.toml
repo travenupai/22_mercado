@@ -1,0 +1,20 @@
+[project]
+name = "vidmarmercado"
+version = "0.1.0"
+description = "vidmarmercado using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<=3.13"
+dependencies = [
+    "crewai[tools]>=0.76.9,<1.0.0"
+]
+
+[project.scripts]
+vidmarmercado = "vidmarmercado.main:run"
+run_crew = "vidmarmercado.main:run"
+train = "vidmarmercado.main:train"
+replay = "vidmarmercado.main:replay"
+test = "vidmarmercado.main:test"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
