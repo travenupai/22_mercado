@@ -27,7 +27,8 @@ class VidmarmercadoCrew():
 			allow_delegation=True,
 			allow_interruption=True,  # Permite interrupções para reagir rapidamente a mudanças nos produtos dos concorrentes
 			allow_fallback=True,      # Permite fallback caso precise de um especialista em tecnologia ou satisfação do cliente
-			llm=MyLLM.gpt4o_mini_2024_07_18
+			llm=MyLLM.gpt4o_mini_2024_07_18,
+			memory=False  # Desativa a memória
 		)
 
 	@agent
@@ -39,7 +40,8 @@ class VidmarmercadoCrew():
 			verbose=True,
 			allow_interruption=True,  # Permite interrupções para reagir rapidamente a mudanças nos produtos dos concorrentes
             allow_fallback=True,      # Permite fallback caso precise de um especialista em tecnologia ou satisfação do cliente
-			llm=MyLLM.gpt4o_mini_2024_07_18
+			llm=MyLLM.gpt4o_mini_2024_07_18,
+			memory=False  # Desativa a memória
 		)
 
 	@agent
@@ -51,7 +53,8 @@ class VidmarmercadoCrew():
 			verbose=True,
 			allow_interruption=True,  # Permite interrupções para reagir rapidamente a mudanças nos produtos dos concorrentes
             allow_fallback=True,      # Permite fallback caso precise de um especialista em tecnologia ou satisfação do cliente
-			llm=MyLLM.gpt4o_mini_2024_07_18
+			llm=MyLLM.gpt4o_mini_2024_07_18,
+			memory=False  # Desativa a memória
 		)
 
 	@task
@@ -86,5 +89,6 @@ class VidmarmercadoCrew():
 			tasks=self.tasks, # Automatically created by the @task decorator
 			process=Process.sequential,
 			verbose=True,
+			memory=False  # Desativa a memória
 			# process=Process.hierarchical, # In case you wanna use that instead https://docs.crewai.com/how-to/Hierarchical/
 		)
