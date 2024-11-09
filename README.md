@@ -121,6 +121,8 @@ crewai run      # Para executar o seu projeto principal
 
 ## 5. Publicar um projeto do GitHub no Streamlit
 
+0. SE QUISER RODAR NO SEU COMPUTADOR: no terminal:  steamlit run app.py
+
 1. Crie um arquivo **`requirements.txt`** na raiz do projeto, listando todas as bibliotecas usadas no projeto, por exemplo:
 requirements.txt
    ```plaintext
