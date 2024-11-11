@@ -17,7 +17,6 @@ scrape_element_tool = ScrapeElementFromWebsiteTool()
 @CrewBase
 class VidmarmercadoCrew():
 	"""Vidmarmercado crew"""
-
 	@agent
 	def customer_analysis_agent(self) -> Agent:
 		return Agent(
