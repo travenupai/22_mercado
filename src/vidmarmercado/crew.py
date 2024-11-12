@@ -2,7 +2,7 @@ from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
 from dotenv import load_dotenv
 from crewai_tools import SerperDevTool, ScrapeWebsiteTool, ScrapeElementFromWebsiteTool
-
+from vidmarmercado.my_llm import MyLLM
 load_dotenv()
 search_tool = SerperDevTool()
 scrape_tool = ScrapeWebsiteTool()
@@ -26,7 +26,8 @@ class VidmarmercadoCrew():
 			allow_delegation=True,
 			allow_interruption=True,  # Permite interrupções para reagir rapidamente a mudanças nos produtos dos concorrentes
 			allow_fallback=True,      # Permite fallback caso precise de um especialista em tecnologia ou satisfação do cliente
-			memory=True
+			memory=True,
+			llm=MyLLM.gpt4o_mini,
 		)
 
 	@agent
@@ -36,6 +37,7 @@ class VidmarmercadoCrew():
 			tools=[search_tool, scrape_tool, scrape_element_tool],
 			allow_delegation=True,
 			verbose=True,
+			llm=MyLLM.gpt4o_mini,
 			allow_interruption=True,  # Permite interrupções para reagir rapidamente a mudanças nos produtos dos concorrentes
             allow_fallback=True,      # Permite fallback caso precise de um especialista em tecnologia ou satisfação do cliente
 			memory=True  
@@ -48,6 +50,7 @@ class VidmarmercadoCrew():
 			tools=[search_tool, scrape_tool, scrape_element_tool],
 			allow_delegation=True,
 			verbose=True,
+			llm=MyLLM.gpt4o_mini,
 			allow_interruption=True,  # Permite interrupções para reagir rapidamente a mudanças nos produtos dos concorrentes
             allow_fallback=True,      # Permite fallback caso precise de um especialista em tecnologia ou satisfação do cliente
 			memory=True
