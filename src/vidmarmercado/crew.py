@@ -7,6 +7,8 @@ load_dotenv()
 search_tool = SerperDevTool()
 scrape_tool = ScrapeWebsiteTool()
 scrape_element_tool = ScrapeElementFromWebsiteTool()
+# from langchain_openai import ChatOpenAI
+gpt4o_mini = MyLLM.gpt4o_mini	
 
 # Uncomment the following line to use an example of a custom tool
 # from vidmarmercado.tools.custom_tool import MyCustomTool
@@ -27,7 +29,7 @@ class VidmarmercadoCrew():
 			allow_interruption=True,  # Permite interrupções para reagir rapidamente a mudanças nos produtos dos concorrentes
 			allow_fallback=True,      # Permite fallback caso precise de um especialista em tecnologia ou satisfação do cliente
 			memory=True,
-			llm=MyLLM.gpt4o_mini,
+			llm=gpt4o_mini,
 		)
 
 	@agent
@@ -37,7 +39,7 @@ class VidmarmercadoCrew():
 			tools=[search_tool, scrape_tool, scrape_element_tool],
 			allow_delegation=True,
 			verbose=True,
-			llm=MyLLM.gpt4o_mini,
+			llm=gpt4o_mini,
 			allow_interruption=True,  # Permite interrupções para reagir rapidamente a mudanças nos produtos dos concorrentes
             allow_fallback=True,      # Permite fallback caso precise de um especialista em tecnologia ou satisfação do cliente
 			memory=True  
@@ -50,7 +52,7 @@ class VidmarmercadoCrew():
 			tools=[search_tool, scrape_tool, scrape_element_tool],
 			allow_delegation=True,
 			verbose=True,
-			llm=MyLLM.gpt4o_mini,
+			llm=gpt4o_mini,
 			allow_interruption=True,  # Permite interrupções para reagir rapidamente a mudanças nos produtos dos concorrentes
             allow_fallback=True,      # Permite fallback caso precise de um especialista em tecnologia ou satisfação do cliente
 			memory=True
