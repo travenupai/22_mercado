@@ -1,4 +1,3 @@
-import sys
 import os
 import streamlit as st
 
@@ -52,5 +51,3 @@ if st.session_state.analise_realizada and st.session_state.arquivos_md:
                 file_name=file,
                 mime="text/markdown"
             )
-
-
