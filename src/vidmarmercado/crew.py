@@ -40,7 +40,7 @@ class VidmarmercadoCrew():
 			allow_delegation=True,
 			verbose=True,
 			allow_interruption=True,  # Permite interrupções para reagir rapidamente a mudanças nos produtos dos concorrentes
-            allow_fallback=True,      # Permite fallback caso precise de um especialista em tecnologia ou satisfação do cliente
+			allow_fallback=True,      # Permite fallback caso precise de um especialista em tecnologia ou satisfação do cliente
 			memory=True,
 			llm=MyLLM.gpt4o_mini
 		)
@@ -63,7 +63,7 @@ class VidmarmercadoCrew():
 		return Task(
 			config=self.tasks_config['customer_feedback_analysis'],
 			output_file='customer_feedback_analysis.md',
-            guardrails=[{"output_format": "markdown"}, {"max_length": 8000}]
+			guardrails=[{"output_format": "markdown"}, {"max_length": 8000}]
 		)
 
 	@task
@@ -71,7 +71,7 @@ class VidmarmercadoCrew():
 		return Task(
 			config=self.tasks_config['market_trends_monitoring'],
 			output_file='market_trends_monitoring.md',
-            guardrails=[{"output_format": "markdown"}, {"max_length": 8000}]
+			guardrails=[{"output_format": "markdown"}, {"max_length": 8000}]
 		)
 
 	@task
@@ -79,7 +79,7 @@ class VidmarmercadoCrew():
 		return Task(
 			config=self.tasks_config['product_comparison'],
 			output_file='product_comparison.md',
-            guardrails=[{"output_format": "markdown"}, {"max_length": 8000}]
+			guardrails=[{"output_format": "markdown"}, {"max_length": 8000}]
 		)
 
 	@crew
