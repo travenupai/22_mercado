@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 class MyLLM():
-    
+        
     # Definir o modelo LLM
     gpt_mini              = ChatOpenAI(model_name="gpt-4o-mini")
     gpt4o_mini            = ChatOpenAI(model_name="gpt-4o-mini")
@@ -12,4 +12,3 @@ class MyLLM():
     gpt4o                 = ChatOpenAI(model_name="gpt-4o")
     gpt_o1                = ChatOpenAI(model_name="o1-preview")
     gpt_o1_mini           = ChatOpenAI(model_name="o1-mini")
-    Ollama_llama_3_1      = ChatOpenAI(model_name="ollama/llama3.1", base_url="http://localhost:1140/openai-8B")
