@@ -8,7 +8,7 @@ search_tool = SerperDevTool()
 scrape_tool = ScrapeWebsiteTool()
 scrape_element_tool = ScrapeElementFromWebsiteTool()
 # from langchain_openai import ChatOpenAI
-gpt4o_mini = MyLLM.gpt4o_mini	
+	
 
 # Uncomment the following line to use an example of a custom tool
 # from vidmarmercado.tools.custom_tool import MyCustomTool
@@ -29,7 +29,7 @@ class VidmarmercadoCrew():
 			allow_interruption=True,  # Permite interrupções para reagir rapidamente a mudanças nos produtos dos concorrentes
 			allow_fallback=True,      # Permite fallback caso precise de um especialista em tecnologia ou satisfação do cliente
 			memory=True,
-			llm=gpt4o_mini,
+			llm=MyLLM.gpt4o_mini
 		)
 
 	@agent
@@ -39,10 +39,10 @@ class VidmarmercadoCrew():
 			tools=[search_tool, scrape_tool, scrape_element_tool],
 			allow_delegation=True,
 			verbose=True,
-			llm=gpt4o_mini,
 			allow_interruption=True,  # Permite interrupções para reagir rapidamente a mudanças nos produtos dos concorrentes
             allow_fallback=True,      # Permite fallback caso precise de um especialista em tecnologia ou satisfação do cliente
-			memory=True  
+			memory=True,
+			llm=MyLLM.gpt4o_mini
 		)
 
 	@agent
@@ -52,7 +52,7 @@ class VidmarmercadoCrew():
 			tools=[search_tool, scrape_tool, scrape_element_tool],
 			allow_delegation=True,
 			verbose=True,
-			llm=gpt4o_mini,
+			llm=MyLLM.gpt4o_mini
 			allow_interruption=True,  # Permite interrupções para reagir rapidamente a mudanças nos produtos dos concorrentes
             allow_fallback=True,      # Permite fallback caso precise de um especialista em tecnologia ou satisfação do cliente
 			memory=True
@@ -63,7 +63,7 @@ class VidmarmercadoCrew():
 		return Task(
 			config=self.tasks_config['customer_feedback_analysis'],
 			output_file='customer_feedback_analysis.md',
-            guardrails=[{"output_format": "markdown"}, {"max_length": 5000}]
+            guardrails=[{"output_format": "markdown"}, {"max_length": 8000}]
 		)
 
 	@task
@@ -71,7 +71,7 @@ class VidmarmercadoCrew():
 		return Task(
 			config=self.tasks_config['market_trends_monitoring'],
 			output_file='market_trends_monitoring.md',
-            guardrails=[{"output_format": "markdown"}, {"max_length": 5000}]
+            guardrails=[{"output_format": "markdown"}, {"max_length": 8000}]
 		)
 
 	@task
@@ -79,7 +79,7 @@ class VidmarmercadoCrew():
 		return Task(
 			config=self.tasks_config['product_comparison'],
 			output_file='product_comparison.md',
-            guardrails=[{"output_format": "markdown"}, {"max_length": 5000}]
+            guardrails=[{"output_format": "markdown"}, {"max_length": 8000}]
 		)
 
 	@crew
@@ -90,6 +90,6 @@ class VidmarmercadoCrew():
 			tasks=self.tasks, # Automatically created by the @task decorator
 			process=Process.sequential,
 			verbose=True,
-			memory=False  # Desativa a memória
+			memory=True  # ativa a memória
 			# process=Process.hierarchical, # In case you wanna use that instead https://docs.crewai.com/how-to/Hierarchical/
 		)

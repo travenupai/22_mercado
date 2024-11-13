@@ -1,8 +1,7 @@
 import sys
 import os
 import streamlit as st
-from dotenv import load_dotenv
-load_dotenv()
+
 
 # Configure the directory src for imports
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "src")))
@@ -12,6 +11,7 @@ try:
     from src.vidmarmercado.crew import VidmarmercadoCrew
 except ModuleNotFoundError:
     st.error("Não foi possível importar o módulo VidmarmercadoCrew. Verifique se o caminho está correto e se o módulo existe.")
+    st.stop()  # Parar a execução caso a importação falhe
 
 # Title for the Streamlit app
 st.title('Análise de Pesquisa de Mercado com AI Agents - CrewAI')

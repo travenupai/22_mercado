@@ -21,7 +21,8 @@ uv pip install crewai
 
 3. ATENCAO: SE VOCÊ CRIA UM NOVO PROJETO OU FLOW OU PIPELINE, DE ESSES COMANDOS:
 NO TERMINAL:
-crewai create crew vidmarmercado
+crewai create crew vidmarmercado (exemplo)
+
 crewai create crew nome_do_projeto
 ou
 crewai create flow nome_do_flow
@@ -32,17 +33,35 @@ crewai create pipeline nome_do_pipeline
 APOS A CRIACAO DO CREWAI, APAGUE O .venv NO 22_MERCADO
 
 cd vidmarmercado
-python -m venv .venv
-.venv\Scripts\activate  # Ativa o novo ambiente virtual dentro de vidmarmercado
 
+######### PARA O STREAMLIT FUNCIONAR O CREWAI TEM QUE SER VERSAO 0.61.0
+
+PARA ATIVAR UM VENV NO PYTHON 3.11.7
+
+VÁ ATÉ O DIRETÓRIO RAIZ:
+C:\projetos-python\22_mercado\vidmarmercado.
+
+ENTAO DE O COMANDO:
+C:\Users\Ashram\AppData\Local\Programs\Python\Python311\python.exe -m venv .venv
+.venv\Scripts\Activate
+python --version
 pip install uv
-uv pip install crewai crewai-tools
-uv pip install --upgrade crewai crewai-tools
-uv lock
-uv sync
-
+uv pip install crewai==0.61.0 
+uv pip install crewai-tools==0.8.3 
 pip freeze | Select-String "crewai"
 
+
+OU O COMANDO PARA O PYTHON 3.12.6:
+python.exe -m venv .venv
+.venv\Scripts\Activate
+python --version
+pip install uv
+uv pip install crewai
+uv pip install crewai-tools
+pip freeze | Select-String "crewai"
+
+uv lock
+uv sync
 
 
 NUNCA USE WEBSITE SEARCH TOOL, ISSO CRIA O DB E ESTRAGA TUDO NO STREAMLIT
