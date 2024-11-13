@@ -54,7 +54,7 @@ class VidmarmercadoCrew():
 			verbose=True,
 			llm=MyLLM.gpt4o_mini,
 			allow_interruption=True,  # Permite interrupções para reagir rapidamente a mudanças nos produtos dos concorrentes
-            allow_fallback=True,      # Permite fallback caso precise de um especialista em tecnologia ou satisfação do cliente
+			allow_fallback=True,      # Permite fallback caso precise de um especialista em tecnologia ou satisfação do cliente
 			memory=True
 		)
 
