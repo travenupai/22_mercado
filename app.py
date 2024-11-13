@@ -1,12 +1,6 @@
 import os
 import streamlit as st
-
-# Import the VidmarmercadoCrew module
-try:
-    from src.vidmarmercado.crew import VidmarmercadoCrew
-except ModuleNotFoundError:
-    st.error("Não foi possível importar o módulo VidmarmercadoCrew. Verifique se o caminho está correto e se o módulo existe.")
-    st.stop()  # Parar a execução caso a importação falhe
+from src.vidmarmercado.crew import VidmarmercadoCrew
 
 # Title for the Streamlit app
 st.title('Análise de Pesquisa de Mercado com AI Agents - CrewAI')
