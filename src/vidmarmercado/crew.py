@@ -74,7 +74,7 @@ class VidmarmercadoCrew():
         return Task(
             config=self.tasks_config['customer_feedback_analysis'],
             output_file='customer_feedback_analysis.md',
-            guardrails=[{"output_format": "markdown"}, {"max_length": 8000}]
+            guardrails=[{"output_format": "markdown"}, {"max_length": 20000}]
         )
 
     @task
@@ -82,7 +82,7 @@ class VidmarmercadoCrew():
         return Task(
             config=self.tasks_config['market_trends_monitoring'],
             output_file='market_trends_monitoring.md',
-            guardrails=[{"output_format": "markdown"}, {"max_length": 8000}]
+            guardrails=[{"output_format": "markdown"}, {"max_length": 20000}]
         )
 
     @task
@@ -90,7 +90,7 @@ class VidmarmercadoCrew():
         return Task(
             config=self.tasks_config['product_comparison'],
             output_file='product_comparison.md',
-            guardrails=[{"output_format": "markdown"}, {"max_length": 8000}]
+            guardrails=[{"output_format": "markdown"}, {"max_length": 20000}]
         )
 
     @crew
