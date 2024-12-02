@@ -17,7 +17,10 @@ Crie um diretório na pasta projetos-python e de um número sequencial.
 cd 22_mercado
 python -m venv .venv
 .venv\Scripts\activate
+pip install uv
 uv pip install crewai
+uv pip install crewai-tools
+pip freeze | Select-String "crewai"
 
 3. ATENCAO: SE VOCÊ CRIA UM NOVO PROJETO OU FLOW OU PIPELINE, DE ESSES COMANDOS:
 NO TERMINAL:
@@ -52,6 +55,7 @@ pip freeze | Select-String "crewai"
 
 
 OU O COMANDO PARA O PYTHON 3.12.6:
+
 python.exe -m venv .venv
 .venv\Scripts\Activate
 python --version
@@ -59,7 +63,8 @@ pip install uv
 uv pip install crewai
 uv pip install crewai-tools
 pip freeze | Select-String "crewai"
-
+uv pip install streamlit
+uv pip install python-docx
 uv lock
 uv sync
 
